@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<script src="script.js" defer></script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 1;
+  margin-bottom: 1%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  background-image: url("bgimg.jpg");
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.box{
+    display: none;
+    width: 100%;
+}
+
+a:hover + .box,.box:hover{
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+#button{
+  line-height: 12px;
+  font-size: 8pt;
+  font-family: tahoma;
+  margin-top: 1px;
+  margin-right: 1px;
+  position:absolute;
+  top:2%;
+  right:1%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.dark-mode{
+  background-color: black;
+  color: white;
+}
+
+i{
+  font-size: 50px;
+  cursor: pointer;
+  position: absolute;
+  margin-top: 1px;
+  margin-right: 1px;
+  top:7%;
+  right:0.1%;
+  transform: translate(-50%, -50%);
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 80%; 
+  height: 15px;
+  border-radius: 5px; 
+  background: #d3d3d3;
+  outline: none; 
+  opacity: 0.7; 
+  -webkit-transition: .2s; 
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1; 
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #41ffec;
+  cursor: pointer; 
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #77fdff; 
+  cursor: pointer; 
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="about-section">
+  <h1>About Us Page</h1>
+  <p>Some text about who we are and what we do.</p>
+  <p>Resize the browser window to see that this page is responsive by the way.</p>
+  <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="br2.jpg" alt="br" style="width:100%">
+      <div class="container">
+        <h2>Mister K</h2>
+        <p class="title">Ryan Gosling</p>
+        <p>Anytime you feel down, the Driver will help you.</p>
+        <p>driver@cinephile.com</p>
+        <p><button class="button" id = "sub1" onclick = "toggle1()">Become Friend</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="anglie.jpeg" alt="anglie" style="width:100%">
+      <div class="container">
+        <h2><a href="https://www.instagram.com/angelinajolie/">Angelina Jolie </a></h2>
+        <div class="box">
+          <iframe src="https://www.instagram.com/angelinajolie/" width = "500px" height = "500px">
+          </iframe>
+        </div>
+        <p class="title">Player</p>
+        <p>Anytime you want to play she is ready.</p>
+        <p>angelina@demo.com</p>
+        <p><button class="button" id = "sub2" onclick = "toggle2()">Become Friend</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="maggie1.jpg" alt="Maggie" style="width:100%">
+      <div class="container">
+        <h2>Maggie Cheung</h2>
+        <p class="title">Actress</p>
+        <p>In the Mood for Coffee.</p>
+        <p>room2046@wong.com</p>
+        <p><button class="button" id = "sub3" onclick = "toggle3()">Become Friend</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<center>
+<div class="slidecontainer">
+  <p>How Do You Rate Us?</p>
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  <p>Value: <span id="demo"></span></p>
+  <button class = "submit" onclick = "submit()">Submit Response</button>
+  <br>
+</div>
+</center>
+
+</body>
+</html>
