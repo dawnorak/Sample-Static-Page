@@ -24,7 +24,7 @@ toggle.addEventListener('click', function(){
    var element = document.body;
    element.classList.toggle("dark-mode");
   }
-  function imgChange(){
+  function imgChange(){ //Function to facilitate the image in dark mode which did not work, hence had to use toggle
     var img = document.getElementById("button");
     if (img.src = "https://cdn-icons-png.flaticon.com/512/5558/5558226.png")
       img.src = "https://cdn-icons-png.flaticon.com/512/5558/5558220.png";
@@ -46,7 +46,7 @@ toggle.addEventListener('click', function(){
       document.getElementById("sub1").innerHTML = "Become Friend";
     }
   }
-  function toggle2(){
+  function toggle2(){ 
     if (!clicked){
       clicked = true;
       document.getElementById("sub2").innerHTML = "Reuqest Sent!";
