@@ -14,6 +14,14 @@ toggle.addEventListener('click', function(){
     }
 });
 
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
   function myFunction(){
     alert("Not Available a the Moment, Sorry!!!");
   }
