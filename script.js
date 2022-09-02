@@ -1,3 +1,4 @@
+/*Dark Mode Toggle*/
 const toggle = document.getElementById('toggleDark');
 const body = document.querySelector('body');
 
@@ -14,10 +15,12 @@ toggle.addEventListener('click', function(){
     }
 });
 
+/*Function for the open form*/
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
 
+/*Function for the close action*/
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
