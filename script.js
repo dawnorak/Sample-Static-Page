@@ -15,6 +15,7 @@ function loadJoke(){
   }
 }
 
+/*Loads dog pictures using AJAX*/
 function dogPic(){
   var ajax = new XMLHttpRequest();
   ajax.open('GET','https://dog.ceo/api/breeds/image/random',true);
