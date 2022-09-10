@@ -1,3 +1,36 @@
+function loadJoke(){
+  var ajax = new XMLHttpRequest();
+  ajax.open('GET','https://catfact.ninja/fact',true);
+  ajax.send();
+  ajax.onreadystatechange = function(){
+      if(this.readyState==4){
+          if(this.status==200){
+              var json = JSON.parse(this.responseText);
+              console.log(json)
+              var html = '<p>'+json.fact+'</p>';
+              document.querySelector('#about').innerHTML = html;
+          }
+      }
+  }
+}
+
+function dogPic(){
+  var ajax = new XMLHttpRequest();
+  ajax.open('GET','https://dog.ceo/api/breeds/image/random',true);
+  ajax.send();
+  ajax.onreadystatechange = function(){
+      if(this.readyState==4){
+          if(this.status==200){
+              var json = JSON.parse(this.responseText);
+              console.log(json)
+              var img = json.message;
+              var html = '<p><img src = "'+img+'"></p>';
+              document.querySelector('#about').innerHTML = html;
+          }
+      }
+  }
+}
+
 /*Dark Mode Toggle*/
 const toggle = document.getElementById('toggleDark');
 const body = document.querySelector('body');
