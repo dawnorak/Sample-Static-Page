@@ -1,3 +1,4 @@
+/*Loads facts using AJAX*/
 function loadJoke(){
   var ajax = new XMLHttpRequest();
   ajax.open('GET','https://catfact.ninja/fact',true);
