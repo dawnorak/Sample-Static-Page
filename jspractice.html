@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>JS Practice</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="icon" href="mastro.jpg">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 <script src="script.js" defer></script>
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 1;
+  margin: 0;
   margin-bottom: 1%;
 }
 
@@ -71,7 +72,7 @@ a:hover + .box,.box:hover{
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #000;
+  background-color: rgb(53, 72, 214);
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -145,7 +146,7 @@ i{
   height: 25px;
   border-radius: 50%;
   background: #77fdff; 
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 @media screen and (max-width: 650px) {
@@ -154,7 +155,7 @@ i{
     display: block;
   }
 }
-  /* Button used to open the contact form */
+/* Button used to open the contact form */
 .open-button {
   background-color: #555;
   color: white;
@@ -198,13 +199,13 @@ i{
   border-radius: 12px;
 }
 
-/* When the inputs get focus*/
+/* When the inputs get focus, do something */
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: rgb(255, 255, 255);
   outline: none;
 }
 
-/* Style for the submit/login button */
+/* Set a style for the submit/login button */
 .form-container .btn {
   background-color: #04AA6D;
   color: white;
@@ -217,7 +218,7 @@ i{
   border-radius: 12px;
 }
 
-/*Background color to the cancel button */
+/* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;
   border-radius: 12px;
@@ -227,32 +228,54 @@ i{
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+#factbt{
+  background-color: rgb(228, 144, 158);
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+#dogpic{
+  background-color: yellowgreen;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 </style>
 </head>
 <body>
 
 <div class="about-section">
   <h1>About Us Page</h1>
-  <p>Used to practice some JavaScript functions.</p>
-  <p>The moon symbol on the top right corner is for the dark mode switch.</p>
+  <div id = "about">
+    <p>Bored? Click the Button below to get a random fact about cats.</p>
+    <p>Not a cat person? Then you can get a picture of a dog.</p>
+    <p>You Choose: </p>
+  </div>
+  <button type = "button" id = "factbt" onclick = "loadJoke()">Cat Fact</button>?
+  OR
+  <button type = "button" id = "dogpic" onclick = "dogPic()">Dog Picture</button>?
   <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
   <button class="open-button" onclick="openForm()">Open Form</button>
-<!--Login Form-->  
+
 <div class="form-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
     <h1>Login</h1>
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" name="email" id = "email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="password" id = "password" required>
 
     <button type="submit" class="btn">Login</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
 </div>
-<!--Display Info-->
+
 <h2 style="text-align:center">Our Team</h2>
 <div class="row">
   <div class="column">
@@ -272,9 +295,9 @@ i{
     <div class="card">
       <img src="anglie.jpeg" alt="anglie" style="width:100%">
       <div class="container">
-        <h2><a href="https://www.instagram.com/angelinajolie/">Angelina Jolie </a></h2>
+        <h2><a href="https://en.wikipedia.org/wiki/Angelina_Jolie">Angelina Jolie </a></h2>
         <div class="box">
-          <iframe src="https://www.instagram.com/angelinajolie/" width = "500px" height = "500px">
+          <iframe src="https://en.wikipedia.org/wiki/Angelina_Jolie" width = "500px" height = "500px">
           </iframe>
         </div>
         <p class="title">Player</p>
