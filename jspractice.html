@@ -245,6 +245,23 @@ i{
 }
 
 </style>
+<script>
+  document.querySelector('#search').addEventListener('click', function (e) {
+    var search = document.querySelector('input[name="email"]').value;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      var myObj = JSON.parse(xhr.response);
+      console.log(myObj)
+      for (var x = 0; x < myObj.length; x++) {
+        about.innerHTML += '<b>' + myObj[x].name + ' ' + myObj[x].password + '<br>';
+      }
+    }
+    }
+    xhr.open('GET', 'http://localhost:3000/profile?q=' + search, true)
+    xhr.send()
+  })
+</script>
 </head>
 <body>
 
@@ -261,8 +278,8 @@ i{
   <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
   <button class="open-button" onclick="openForm()">Open Form</button>
 
-<div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
+  <div class="form-popup" id="myForm">
+  <form id="myForm" class="form-container">
     <h1>Login</h1>
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id = "email" required>
@@ -270,10 +287,10 @@ i{
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id = "password" required>
 
-    <button type="submit" class="btn">Login</button>
+    <button class='btn' id="search">Search</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
-</div>
+  </div>
 </div>
 
 <h2 style="text-align:center">Our Team</h2>
