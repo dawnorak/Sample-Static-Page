@@ -82,6 +82,7 @@ function closeForm() {
     imgChange();
   }
   var clicked = false;
+/*Friend Button*/
   function toggle1(){
     if (!clicked){
       clicked = true;
@@ -92,6 +93,7 @@ function closeForm() {
       document.getElementById("sub1").innerHTML = "Become Friend";
     }
   }
+/*Friend Button*/
   function toggle2(){ 
     if (!clicked){
       clicked = true;
